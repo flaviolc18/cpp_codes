@@ -1,33 +1,33 @@
 #include "rectangle.h"
 
 Rectangle::Rectangle(){
-  _length = 1;
+  _height = 1;
   _width = 1;
   calc();
 }
 
-Rectangle::Rectangle(float length, float width){
-  if(width <= 0 || width >= 20 || length <= 0 || length >= 20)
-    throw invalid_argument("The width and length must be between 0.0 and 20.0");
+Rectangle::Rectangle(float height, float width){
+  if(width <= 0 || width >= 20 || height <= 0 || height >= 20)
+    throw invalid_argument("The width and height must be between 0.0 and 20.0");
 
-  _length = length;
+  _height = height;
   _width = width;
   calc();
 }
 
 void Rectangle::calc(){
-  _perimeter = 2*_width + 2*_length;
-  _area = _width * _length;
+  _perimeter = 2*_width + 2*_height;
+  _area = _width * _height;
 }
 
-float Rectangle::get_length(){
-  return _length;
+float Rectangle::get_height(){
+  return _height;
 }
-void Rectangle::set_length(float length){
-  if(length <= 0 || length >= 20)
-    throw invalid_argument("The length must be between 0.0 and 20.0");
+void Rectangle::set_height(float height){
+  if(height <= 0 || height >= 20)
+    throw invalid_argument("The height must be between 0.0 and 20.0");
   
-  _length = length;
+  _height = height;
   calc();
 }
 

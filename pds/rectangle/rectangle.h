@@ -7,7 +7,7 @@ using namespace std;
 
  class Rectangle{
    private:
-    float _length;
+    float _height;
     float _width;
     float _perimeter;
     float _area;
@@ -16,10 +16,10 @@ using namespace std;
 
   public:
     Rectangle();
-    Rectangle(float length, float width);
+    Rectangle(float height, float width);
 
-    float get_length();
-    void set_length(float length);
+    float get_height();
+    void set_height(float height);
     float get_width();
     void set_width(float width);
     float get_perimeter();
