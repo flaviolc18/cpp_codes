@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "BST.h"
+#include "listaencadeada.h"
 
 BST::BST(){
   this->_raiz = nullptr;
@@ -31,4 +32,28 @@ bool BST::existe_elemento(int e){
 void BST::imprimir() {
   if (this->_raiz != nullptr) 
     this->_raiz->imprimir();
+}
+
+ListaEncadeada BST::pre_ordem(){
+  if(this->_raiz != nullptr){
+    ListaEncadeada *lista = new ListaEncadeada();
+    this->_raiz->add_pre_ordem(lista);
+    return *lista;
+  }
+}
+
+ListaEncadeada BST::em_ordem(){
+  if(this->_raiz != nullptr){
+    ListaEncadeada *lista = new ListaEncadeada();
+    this->_raiz->add_em_ordem(lista);
+    return *lista;
+  }
+}
+
+ListaEncadeada BST::pos_ordem(){
+  if(this->_raiz != nullptr){
+    ListaEncadeada *lista = new ListaEncadeada();
+    this->_raiz->add_pos_ordem(lista);
+    return *lista;
+  }
 }
