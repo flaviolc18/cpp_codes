@@ -44,7 +44,7 @@ bool Node::existe_elemento(int e){
     if(this->_dir != nullptr)
       return this->_dir->existe_elemento(e);
 
-    return false
+    return false;
   }
   return true;
 }
@@ -64,7 +64,7 @@ void Node::add_pre_ordem(ListaEncadeada *lista){
 
   if(this->_esq != nullptr)
     this->_esq->add_pre_ordem(lista);
-  if(this->_dir !- nullptr)
+  if(this->_dir != nullptr)
     this->_dir->add_pre_ordem(lista);
 }
 
@@ -80,7 +80,7 @@ void Node::add_em_ordem(ListaEncadeada *lista){
 
   lista->insere_elemento(this->_elem);
 
-  if(this->_dir !- nullptr)
+  if(this->_dir != nullptr)
     this->_dir->add_pre_ordem(lista);
 }
 
@@ -93,7 +93,7 @@ ListaEncadeada Node::em_ordem(){
 void Node::add_pos_ordem(ListaEncadeada *lista){
   if(this->_esq != nullptr)
     this->_esq->add_pre_ordem(lista);
-  if(this->_dir !- nullptr)
+  if(this->_dir != nullptr)
     this->_dir->add_pre_ordem(lista);
 
   lista->insere_elemento(this->_elem);
