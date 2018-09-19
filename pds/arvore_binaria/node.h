@@ -14,7 +14,10 @@ public:
     bool existe_elemento(int e);
     void imprimir();
     ListaEncadeada pre_ordem();
+    void add_pre_ordem(ListaEncadeada *lista);
     ListaEncadeada em_ordem();
+    void add_em_ordem(ListaEncadeada *lista);
     ListaEncadeada pos_ordem();
+    void add_pos_ordem(ListaEncadeada *lista);
 };
 #endif

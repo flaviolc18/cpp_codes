@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "node.h"
+#include "listaencadeada.h"
 
 Node::Node(int e){
   this->_esq = nullptr;
@@ -56,4 +57,47 @@ void Node::imprimir(){
   if(this->_dir != nullptr)
     this->_dir->imprimir();
   
+}
+
+void Node::add_pre_ordem(ListaEncadeada *lista){
+  lista->insere_elemento(this->_elem);
+  
+  if(this->_esq != nullptr)
+    this->_esq->add_pre_ordem(lista);
+  if(this->_dir !- nullptr)
+    this->_dir->add_pre_ordem(lista);
+}
+
+ListaEncadeada Node::pre_ordem(){
+  ListaEncadeada *lista = new ListaEncadeada();
+  this->add_pre_ordem(lista);
+}
+
+void Node::add_em_ordem(ListaEncadeada *lista){
+  if(this->_esq != nullptr)
+    this->_esq->add_pre_ordem(lista);
+
+  lista->insere_elemento(this->_elem);
+
+  if(this->_dir !- nullptr)
+    this->_dir->add_pre_ordem(lista);
+}
+
+ListaEncadeada Node::em_ordem(){
+  ListaEncadeada *lista = new ListaEncadeada();
+  this->add_em_ordem(lista);
+}
+
+void Node::add_pos_ordem(ListaEncadeada *lista){
+  if(this->_esq != nullptr)
+    this->_esq->add_pre_ordem(lista);
+  if(this->_dir !- nullptr)
+    this->_dir->add_pre_ordem(lista);
+
+  lista->insere_elemento(this->_elem);
+}
+
+ListaEncadeada Node::pos_ordem(){
+  ListaEncadeada *lista = new ListaEncadeada();
+  this->add_pos_ordem(lista);
 }
