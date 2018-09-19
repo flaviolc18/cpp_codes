@@ -4,14 +4,15 @@
 
 class Node {
 private:
-    Node *_esquerda;
-    Node *_direita;
-    int _elemento;
+    Node *_esq;
+    Node *_dir;
+    int _elem;
 public:
-    Node(int valor);
+    Node(int e);
     ~Node();
-    void inserir_elemento(int elemento);
-    bool existe_elemento(int elemento);
+    void inserir_elemento(int e);
+    bool existe_elemento(int e);
+    void imprimir();
     ListaEncadeada pre_ordem();
     ListaEncadeada em_ordem();
     ListaEncadeada pos_ordem();

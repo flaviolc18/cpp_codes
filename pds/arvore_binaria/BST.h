@@ -11,8 +11,8 @@ private:
 public:
     BST();
     ~BST();
-    void inserir_elemento(int elemento);
-    bool existe_elemento(int elemento);
+    void inserir_elemento(int e);
+    bool existe_elemento(int e);
     void imprimir();
     ListaEncadeada pre_ordem();
     ListaEncadeada em_ordem();
