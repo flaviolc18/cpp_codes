@@ -76,12 +76,12 @@ ListaEncadeada Node::pre_ordem(){
 
 void Node::add_em_ordem(ListaEncadeada *lista){
   if(this->_esq != nullptr)
-    this->_esq->add_pre_ordem(lista);
+    this->_esq->add_em_ordem(lista);
 
   lista->insere_elemento(this->_elem);
 
   if(this->_dir != nullptr)
-    this->_dir->add_pre_ordem(lista);
+    this->_dir->add_em_ordem(lista);
 }
 
 ListaEncadeada Node::em_ordem(){
@@ -92,9 +92,9 @@ ListaEncadeada Node::em_ordem(){
 
 void Node::add_pos_ordem(ListaEncadeada *lista){
   if(this->_esq != nullptr)
-    this->_esq->add_pre_ordem(lista);
+    this->_esq->add_pos_ordem(lista);
   if(this->_dir != nullptr)
-    this->_dir->add_pre_ordem(lista);
+    this->_dir->add_pos_ordem(lista);
 
   lista->insere_elemento(this->_elem);
 }

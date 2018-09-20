@@ -24,7 +24,7 @@ void BST::inserir_elemento(int e){
 }
 
 bool BST::existe_elemento(int e){
-  if (this->_raiz != nullptr)
+  if (this->_raiz == nullptr)
     return false;
   return this->_raiz->existe_elemento(e);
 }
