@@ -16,5 +16,5 @@ string Esfera::get_nome(){
 
 double Esfera::get_volume(){
   double r = this->_r;
-  return ((4/3)*PI*r*r*r);
+  return ((4*PI*r*r*r)/(double)3);
 }
