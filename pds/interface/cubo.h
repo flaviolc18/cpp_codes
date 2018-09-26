@@ -4,6 +4,7 @@
 #include "forma3d.h"
 
 class Cubo : public Forma3D{
+
   private:
     double _a;
     string _cor;
@@ -12,7 +13,6 @@ class Cubo : public Forma3D{
   public:
     Cubo(string cor, double a);
 
-    //abstract class
     virtual string get_cor();
     virtual string get_nome();
     virtual double get_volume();
