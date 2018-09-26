@@ -6,6 +6,8 @@
 #include "cubo.h"
 #include "circulo.h"
 #include "esfera.h"
+#include "quadrado.h"
+#include "triangulo.h"
 
 using namespace std;
 
@@ -77,6 +79,58 @@ int main(){
   << p3->get_nome()
   << " "
   << p3->get_volume()
+  << endl;
+}
+
+{
+  Quadrado c2("cor4", 5);
+
+  Forma2D *p2 = &c2;
+
+  cout 
+  << c2.get_cor() 
+  << " " 
+  << c2.get_nome()
+  << " "
+  << c2.get_area()
+  << " "
+  << c2.get_perimetro()
+  << endl;
+
+  cout 
+  << p2->get_cor() 
+  << " " 
+  << p2->get_nome()
+  << " "
+  << p2->get_area()
+  << " "
+  << p2->get_perimetro()
+  << endl;
+}
+
+{
+  Triangulo c2("cor5", 5, 4, 3);
+
+  Forma2D *p2 = &c2;
+
+  cout 
+  << c2.get_cor() 
+  << " " 
+  << c2.get_nome()
+  << " "
+  << c2.get_area()
+  << " "
+  << c2.get_perimetro()
+  << endl;
+
+  cout 
+  << p2->get_cor() 
+  << " " 
+  << p2->get_nome()
+  << " "
+  << p2->get_area()
+  << " "
+  << p2->get_perimetro()
   << endl;
 }
 
