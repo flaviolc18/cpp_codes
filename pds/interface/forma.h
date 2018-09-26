@@ -1,6 +1,8 @@
 #ifndef PDS2_FORMA_H
 #define PDS2_FORMA_H
 
+#define PI 3.14159265358979323846
+
 #include <iostream>
 
 using namespace std;
@@ -8,7 +10,6 @@ using namespace std;
 class Forma{
 
   public:
-    //virtual ~Forma(){};
     virtual string get_cor() = 0;
     virtual string get_nome() = 0;
 };

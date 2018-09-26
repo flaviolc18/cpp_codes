@@ -1,9 +1,9 @@
 #include "cubo.h"
 
-Cubo::Cubo(double a, string cor, string nome){
+Cubo::Cubo(string cor, double a){
   this->_a = a;
   this->_cor = cor;
-  this->_nome = nome;
+  this->_nome = "cubo";
 }
 
 string Cubo::get_cor(){

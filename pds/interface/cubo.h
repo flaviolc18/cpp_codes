@@ -10,10 +10,9 @@ class Cubo : public Forma3D{
     string _nome;
 
   public:
-    Cubo(double a, string cor="", string nome="");
+    Cubo(string cor, double a);
 
     //abstract class
-    //virtual ~Cubo();
     virtual string get_cor();
     virtual string get_nome();
     virtual double get_volume();
