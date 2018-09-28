@@ -19,9 +19,20 @@ double DestinationPackages::custo_total(string user){
       it++
     ){
 
-      for(Package* p : it->second){
+      for(Package *p : it->second){
         count += p->calculate_cost();
       }
+    }
+  }else{
+    if(this->_packs.find(user) !=  this->_packs.end()){
+
+      for(Package *p : this->_packs[user]){
+        count += p->calculate_cost();
+      }
+
+    }else{
+      //raise exception
+      return 0;
     }
   }
   return count;
