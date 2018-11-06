@@ -1,0 +1,1 @@
+test_bispo.cpp test_cavalo.cpp test_excecoes.cpp test_peao.cpp test_peca.cpp test_posicao.cpp test_rainha.cpp test_rei.cpp test_tabuleiro.cpp test_torre.cpp 

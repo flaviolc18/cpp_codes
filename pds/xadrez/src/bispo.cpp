@@ -1,6 +1,6 @@
 #include "bispo.h"
 
-Bispo::Bispo(int x, int y) : Peca("♝", x,y){}
+Bispo::Bispo(int x, int y, Tabuleiro* t) : Peca("♝", x, y, t){}
 
 bool Bispo::pode_mover(int x, int y){
 

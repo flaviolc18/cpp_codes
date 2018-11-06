@@ -1,6 +1,6 @@
 #include "peca.h"
 
-Peca::Peca(std::string nome, int x, int y) : _p(-1,-1) {
+Peca::Peca(std::string nome, int x, int y, Tabuleiro* t) : _tabuleiro(t), _p(-1,-1) {
 
   if(x<0 || x>7 || y<0 || y>7){
     throw MovimentoInvalidoException("A peca deve estar em uma das posicoes do tabuleiro (0 >= x,y <= 7)");
@@ -36,6 +36,6 @@ std::string Peca::get_posicao(){
 
 bool Peca::valida_movimento(int x, int y){
   Posicao novo_p(this->_p._x+x, this->_p._y+y);
-  return (novo_p._x < 8 && novo_p._y < 8) && this->_tabuleiro.pode_mover(novo_p);
+  return (novo_p._x < 8 && novo_p._y < 8) && this->_tabuleiro->pode_mover(novo_p);
   
 }

@@ -12,10 +12,10 @@ class Peca{
   protected:
     std::string _nome;
     Posicao _p;
-    Tabuleiro _tabuleiro;
+    Tabuleiro* _tabuleiro;
   
   public:
-    Peca(std::string nome, int x, int y);
+    Peca(std::string nome, int x, int y, Tabuleiro* t);
     void mover(int x, int y);
     bool valida_movimento(int x, int y);
     int get_x();

@@ -6,7 +6,7 @@
 class Torre : public Peca{
 
   public:
-    Torre(int x, int y);
+    Torre(int x, int y, Tabuleiro* t);
     virtual bool pode_mover(int x, int y);
 };
 

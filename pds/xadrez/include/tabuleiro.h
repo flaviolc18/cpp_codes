@@ -19,6 +19,7 @@ class Tabuleiro {
 
   public:
     Tabuleiro();
+    ~Tabuleiro();
     bool pode_mover(Posicao& p);
 };
 

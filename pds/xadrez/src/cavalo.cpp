@@ -1,6 +1,6 @@
 #include "cavalo.h"
 
-Cavalo::Cavalo(int x, int y) : Peca("♞", x, y){}
+Cavalo::Cavalo(int x, int y, Tabuleiro* t) : Peca("♞", x, y, t){}
 
 bool Cavalo::pode_mover(int x, int y){
 
