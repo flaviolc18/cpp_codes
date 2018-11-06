@@ -1,0 +1,27 @@
+        -:    0:Source:src/triangulo.cpp
+        -:    0:Programs:8
+        -:    1:#include "triangulo.h"
+        -:    2:
+       37:    3:Triangulo::Triangulo(double x, double y, double z){
+       37:    4:  if(x<0 || y<0 || z<0){
+       36:    5:    throw TrianguloInvalidoException("Os parâmetros devem ser positivos");
+        -:    6:  }
+        -:    7:
+       25:    8:  double max = std::max({x,y,z});
+       25:    9:  if(max > (x+y+z-max)){
+       30:   10:    throw TrianguloInvalidoException("Não satisfaz a condição de existencia de um triângulo");
+        -:   11:  }
+       15:   12:  this->_x = x;
+       15:   13:  this->_y = y;
+       15:   14:  this->_z = z;
+       15:   15:}
+        -:   16:
+       12:   17:Tipo Triangulo::determinar_tipo(){
+       12:   18:  if(this->_x ==  this->_y && this->_y == this->_z){
+        -:   19:    return EQUILATERO;
+        -:   20:  }
+        8:   21:  if(this->_x !=  this->_y && this->_y != this->_z && this->_z != this->_x){
+        4:   22:    return ESCALENO;
+        -:   23:  }
+        -:   24:  return ISOSCELES;
+        -:   25:}
