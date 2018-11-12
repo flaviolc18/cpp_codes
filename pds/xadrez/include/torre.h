@@ -1,7 +1,8 @@
 #ifndef TORRE_H
 #define TORRE_H
 
-#include "peca.h"
+class Peca;
+class Tabuleiro;
 
 class Torre : public Peca{
 

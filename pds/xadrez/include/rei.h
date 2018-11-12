@@ -6,8 +6,8 @@
 class Rei : public Peca{
 
   public:
-    Rei(int x, int y, Tabuleiro* t);
-    virtual bool pode_mover(int x, int y);
+    Rei(int x, int y);
+    virtual bool pode_mover(int x, int y, Tabuleiro* t);
 };
 
 #endif

@@ -1,8 +1,8 @@
 #include "cavalo.h"
 
-Cavalo::Cavalo(int x, int y, Tabuleiro* t) : Peca("♞", x, y, t){}
+Cavalo::Cavalo(int x, int y) : Peca("♞", x, y){}
 
-bool Cavalo::pode_mover(int x, int y){
+bool Cavalo::pode_mover(int x, int y, Tabuleiro* t){
 
-  return (x < 3 && y < 3 && x > -3 && y > -3) && (x+y == 3) && this->valida_movimento(x, y);
+  return (std::abs(x) < 3 && std::abs(y) < 3) && (x+y == 3) && this->valida_movimento(x, y, t);
 }

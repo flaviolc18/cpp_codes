@@ -3,11 +3,11 @@
 
 #include "peca.h"
 
-class Peao : public Peca{
+class Peao : public Peca {
 
   public:
-    Peao(int x, int y, Tabuleiro* t);
-    virtual bool pode_mover(int x, int y);
+    Peao(int x, int y);
+    virtual bool pode_mover(int x, int y, Tabuleiro* t);
 };
 
 #endif

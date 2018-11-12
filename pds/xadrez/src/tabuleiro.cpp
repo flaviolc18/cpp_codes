@@ -13,7 +13,7 @@ Tabuleiro::Tabuleiro(){
 
     //inicia os peoes
     for(int i=0; i<8; i++){
-      this->_pecas[time][Posicao(i, initial+acc)] = new Peao(i, 4, this);
+      this->_pecas[time][Posicao(i, initial+acc)] = new Peao(i, initial+acc, this);
     }
 
     //inicia as torres

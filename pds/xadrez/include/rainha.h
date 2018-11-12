@@ -6,8 +6,8 @@
 class Rainha : public Peca{
 
   public:
-    Rainha(int x, int y, Tabuleiro* t);
-    virtual bool pode_mover(int x, int y);
+    Rainha(int x, int y);
+    virtual bool pode_mover(int x, int y, Tabuleiro* t);
 };
 
 #endif
