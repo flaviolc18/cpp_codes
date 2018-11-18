@@ -39,6 +39,12 @@ coverage:
 	@gcov $(SOURCES) -cfjkrlpo build/
 	@$(RM) *.gcda *.gcno
 
+show_cov:
+	gcovr -r . -e "third_party/*"
+
+show_cov_html:
+	gcovr -r . -e "third_party/*" --html -o coverage.html && google-chrome coverage.html
+
 clean:
 	$(RM) -r $(OBJDIR)/* $(BINDIR)/* coverage/* *.gcda *.gcno
 
