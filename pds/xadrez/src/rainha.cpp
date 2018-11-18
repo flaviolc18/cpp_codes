@@ -4,9 +4,9 @@
 Rainha::Rainha(int x, int y, std::string &cor) : Peca("♛", cor, x, y) {}
 Rainha::~Rainha() {}
 
-bool Rainha::pode_mover(int x, int y, Tabuleiro *t)
+bool Rainha::pode_mover(int x, int y)
 {
-  return ((std::abs(this->_p._x - x) == std::abs(this->_p._y - y) || (x == 0 || y == 0))) && this->valida_movimento(x, y, t);
+  return ((std::abs(x) == std::abs(y) || (x == 0 || y == 0)));
 }
 
 bool Rainha::tem_peca_na_frente(int x, int y, Tabuleiro *t)
@@ -39,7 +39,10 @@ bool Rainha::tem_peca_na_frente(int x, int y, Tabuleiro *t)
     acrescimo_k = -1;
   }
 
-  while (j != x && k != y)
+  j += acrescimo_j;
+  k += acrescimo_k;
+
+  while (j != x || k != y)
   {
     if (t->tem_peca(j, k))
     {
@@ -48,5 +51,5 @@ bool Rainha::tem_peca_na_frente(int x, int y, Tabuleiro *t)
     j += acrescimo_j;
     k += acrescimo_k;
   }
-  return false;
+  return t->tem_peca(x, y);
 }

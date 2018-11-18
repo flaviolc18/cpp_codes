@@ -13,7 +13,7 @@ class Peao : public Peca
 public:
   Peao(int x, int y, std::string &cor, bool ehPositivo);
   virtual ~Peao();
-  virtual bool pode_mover(int x, int y, Tabuleiro *t);
+  virtual bool pode_mover(int x, int y);
   virtual bool tem_peca_na_frente(int x, int y, Tabuleiro *t);
 };
 

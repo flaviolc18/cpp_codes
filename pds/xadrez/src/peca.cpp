@@ -16,16 +16,8 @@ Peca::Peca(std::string nome, std::string &cor, int x, int y) : _p(-1, -1)
 
 Peca::~Peca() {}
 
-void Peca::mover(int x, int y, Tabuleiro *t)
+void Peca::mover(int x, int y)
 {
-  if (!this->pode_mover(x, y, t))
-  {
-    throw MovimentoInvalidoException("Movimento Invalido");
-  }
-  if (this->tem_peca_na_frente(x, y, t))
-  {
-    throw PecaNaFrenteException("Movimento Invalido");
-  }
   this->_p.set_posicao(this->_p._x + x, this->_p._y + y);
 }
 
@@ -52,10 +44,4 @@ std::string Peca::get_cor()
 std::string Peca::get_posicao()
 {
   return "(" + std::to_string(this->_p._x) + ", " + std::to_string(this->_p._y) + ")";
-}
-
-bool Peca::valida_movimento(int x, int y, Tabuleiro *t)
-{
-  Posicao novo_p(this->_p._x + x, this->_p._y + y);
-  return t->pode_mover(novo_p);
 }

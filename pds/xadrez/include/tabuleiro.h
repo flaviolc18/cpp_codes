@@ -31,11 +31,12 @@ class Tabuleiro
 public:
   Tabuleiro();
   ~Tabuleiro();
-  bool pode_mover(Posicao &p);
+  bool esta_no_tabuleiro(Posicao &p);
   void inicializa_pecas(std::string &cor);
   void delete_pecas();
   Peca *get_peca(Posicao &pos);
   void printa_tabuleiro();
   bool tem_peca(int x, int y);
+  void move_peca(Posicao &pos, int x, int y);
 };
 #endif

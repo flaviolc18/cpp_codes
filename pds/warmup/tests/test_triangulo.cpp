@@ -58,7 +58,7 @@ TEST_CASE("Teste VPL - Mensagem da excecao")
     {
         Triangulo t(-5, -5, -5);
     }
-    catch (TrianguloInvalidoException e)
+    catch (TrianguloInvalidoException &e)
     {
         CHECK(std::string(e.what()) == "Os parâmetros devem ser positivos");
     }

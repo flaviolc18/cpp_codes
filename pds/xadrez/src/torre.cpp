@@ -4,9 +4,9 @@
 Torre::Torre(int x, int y, std::string &cor) : Peca("♜", cor, x, y) {}
 Torre::~Torre() {}
 
-bool Torre::pode_mover(int x, int y, Tabuleiro *t)
+bool Torre::pode_mover(int x, int y)
 {
-  return (x == 0 || y == 0) && this->valida_movimento(x, y, t);
+  return (x == 0 || y == 0);
 }
 
 bool Torre::tem_peca_na_frente(int x, int y, Tabuleiro *t)
@@ -26,7 +26,10 @@ bool Torre::tem_peca_na_frente(int x, int y, Tabuleiro *t)
     acrescimo_j = x > this->_p._x ? 1 : -1;
   }
 
-  while (j != x && k != y)
+  j += acrescimo_j;
+  k += acrescimo_k;
+
+  while (j != x || k != y)
   {
     if (t->tem_peca(j, k))
     {
@@ -35,5 +38,5 @@ bool Torre::tem_peca_na_frente(int x, int y, Tabuleiro *t)
     j += acrescimo_j;
     k += acrescimo_k;
   }
-  return false;
+  return t->tem_peca(x, y);
 }

@@ -29,15 +29,13 @@ void Tabuleiro::delete_pecas()
   delete this->_pecas;
 }
 
-bool Tabuleiro::pode_mover(Posicao &p)
+bool Tabuleiro::esta_no_tabuleiro(Posicao &p)
 {
   if (p._x > 7 || p._x < 0 || p._y > 7 || p._y < 0)
   {
     return false;
   }
-  //por enquanto nao vou validar se tem alguma peca no caminho
-  auto peca = this->_pecas->find(p);
-  return peca == this->_pecas->end();
+  return true;
 }
 
 Peca *Tabuleiro::get_peca(Posicao &pos)
@@ -55,6 +53,31 @@ bool Tabuleiro::tem_peca(int x, int y)
 {
   Posicao pos = Posicao(x, y);
   return this->_pecas->find(pos) != this->_pecas->end();
+}
+
+void Tabuleiro::move_peca(Posicao &pos, int x, int y)
+{
+  Posicao nova = Posicao(pos._x + x, pos._y + y);
+
+  Peca *p = this->get_peca(pos);
+
+  if (!p->pode_mover(x, y))
+  {
+    throw MovimentoInvalidoException("Movimento Invalido");
+  }
+  if (!this->esta_no_tabuleiro(nova))
+  {
+    throw PosicaoForaDoTabuleiroException("Fora do Tabuleiro");
+  }
+  if (p->tem_peca_na_frente(nova._x, nova._y, this))
+  {
+    throw PecaNaFrenteException("Peca na Frente");
+  }
+
+  p->mover(x, y);
+  auto it = this->_pecas->find(pos);
+  this->_pecas->erase(it);
+  this->_pecas->insert(std::make_pair(nova, p));
 }
 
 void Tabuleiro::inicializa_pecas(std::string &cor)
@@ -125,7 +148,7 @@ void Tabuleiro::printa_tabuleiro()
   std::cout << std::endl;
   std::cout << std::endl;
 
-  for (int i = 0; i < 8; i++)
+  for (int i = 7; i > -1; i--)
   {
     for (int j = 0; j < 8; j++)
     {
