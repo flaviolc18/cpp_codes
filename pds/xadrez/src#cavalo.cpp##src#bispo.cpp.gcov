@@ -1,0 +1,39 @@
+        -:    0:Source:src/bispo.cpp
+        -:    0:Programs:40
+        -:    1:#include "bispo.h"
+        -:    2:#include "tabuleiro.h"
+        -:    3:
+      264:    4:Bispo::Bispo(int x, int y, std::string &cor) : Peca("♝", cor, x, y) {}
+[45;37m[K      128[m[K:    5:Bispo::~Bispo() {}
+------------------
+[36m[K_ZN5BispoD0Ev[m[K:
+      128:    5:Bispo::~Bispo() {}
+------------------
+[36m[K_ZN5BispoD2Ev[m[K:
+[41;37m[K        0[m[K:    5:Bispo::~Bispo() {}
+------------------
+       16:    6:bool Bispo::pode_mover(int x, int y)
+        -:    7:{
+       16:    8:  return std::abs(x) == std::abs(y);
+        -:    9:}
+        -:   10:
+        8:   11:bool Bispo::tem_peca_na_frente(int x, int y, Tabuleiro *t)
+        -:   12:{
+        8:   13:  int j = this->_p._x, k = this->_p._y;
+        8:   14:  int acrescimo_j = x > j ? 1 : -1;
+        8:   15:  int acrescimo_k = y > k ? 1 : -1;
+        -:   16:
+        8:   17:  j += acrescimo_j;
+        8:   18:  k += acrescimo_k;
+        -:   19:
+       12:   20:  while (j != x && k != y)
+        -:   21:  {
+        8:   22:    if (t->tem_peca(j, k))
+        -:   23:    {
+        -:   24:      return true;
+        -:   25:    }
+        4:   26:    j += acrescimo_j;
+        4:   27:    k += acrescimo_k;
+        -:   28:  }
+        4:   29:  return t->tem_peca(x, y);
+        -:   30:}

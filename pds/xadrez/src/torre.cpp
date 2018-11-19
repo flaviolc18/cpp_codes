@@ -38,5 +38,5 @@ bool Torre::tem_peca_na_frente(int x, int y, Tabuleiro *t)
     j += acrescimo_j;
     k += acrescimo_k;
   }
-  return t->tem_peca(x, y);
+  return t->tem_peca(j, k);
 }

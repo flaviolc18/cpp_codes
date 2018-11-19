@@ -1,0 +1,31 @@
+        -:    0:Source:src/excecoes.cpp
+        -:    0:Programs:40
+        -:    1:#include "excecoes.h"
+        -:    2:
+      104:    3:MovimentoInvalidoException::MovimentoInvalidoException(std::string msg) : _msg(msg) {}
+        -:    4:
+        2:    5:const char *MovimentoInvalidoException::what() const noexcept
+        -:    6:{
+        4:    7:  return this->_msg.c_str();
+        -:    8:}
+        -:    9:
+      264:   10:PosicaoSemPecaException::PosicaoSemPecaException(std::string msg) : _msg(msg) {}
+        -:   11:
+        2:   12:const char *PosicaoSemPecaException::what() const noexcept
+        -:   13:{
+        4:   14:  return this->_msg.c_str();
+        -:   15:}
+        -:   16:
+       40:   17:PosicaoForaDoTabuleiroException::PosicaoForaDoTabuleiroException(std::string msg) : _msg(msg) {}
+        -:   18:
+        2:   19:const char *PosicaoForaDoTabuleiroException::what() const noexcept
+        -:   20:{
+        4:   21:  return this->_msg.c_str();
+        -:   22:}
+        -:   23:
+       40:   24:PecaNaFrenteException::PecaNaFrenteException(std::string msg) : _msg(msg) {}
+        -:   25:
+        2:   26:const char *PecaNaFrenteException::what() const noexcept
+        -:   27:{
+        4:   28:  return this->_msg.c_str();
+        -:   29:}

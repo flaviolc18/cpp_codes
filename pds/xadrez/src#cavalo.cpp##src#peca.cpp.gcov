@@ -1,0 +1,56 @@
+        -:    0:Source:src/peca.cpp
+        -:    0:Programs:40
+        -:    1:#include "peca.h"
+        -:    2:#include "tabuleiro.h"
+        -:    3:
+       3k:    4:Peca::Peca(std::string nome, std::string &cor, int x, int y) : _p(-1, -1)
+        -:    5:{
+        -:    6:
+       1k:    7:  if (x < 0 || x > 7 || y < 0 || y > 7)
+        -:    8:  {
+       72:    9:    throw MovimentoInvalidoException("A peca deve estar em uma das posicoes do tabuleiro (0 >= x,y <= 7)");
+        -:   10:  }
+        -:   11:
+       1k:   12:  this->_nome = nome;
+       1k:   13:  this->_cor = cor;
+       1k:   14:  this->_p.set_posicao(x, y);
+       1k:   15:}
+        -:   16:
+[45;37m[K       1k[m[K:   17:Peca::~Peca() {}
+------------------
+[36m[K_ZN4PecaD0Ev[m[K:
+[41;37m[K        0[m[K:   17:Peca::~Peca() {}
+------------------
+[36m[K_ZN4PecaD2Ev[m[K:
+       1k:   17:Peca::~Peca() {}
+------------------
+        -:   18:
+       88:   19:void Peca::mover(int x, int y)
+        -:   20:{
+       88:   21:  this->_p.set_posicao(this->_p._x + x, this->_p._y + y);
+       88:   22:}
+        -:   23:
+        4:   24:int Peca::get_x()
+        -:   25:{
+        4:   26:  return this->_p._x;
+        -:   27:}
+        -:   28:
+        4:   29:int Peca::get_y()
+        -:   30:{
+        4:   31:  return this->_p._y;
+        -:   32:}
+        -:   33:
+      152:   34:std::string Peca::get_nome()
+        -:   35:{
+      152:   36:  return this->_nome;
+        -:   37:}
+        -:   38:
+       24:   39:std::string Peca::get_cor()
+        -:   40:{
+       24:   41:  return this->_cor;
+        -:   42:}
+        -:   43:
+        3:   44:std::string Peca::get_posicao()
+        -:   45:{
+        3:   46:  return "(" + std::to_string(this->_p._x) + ", " + std::to_string(this->_p._y) + ")";
+        -:   47:}

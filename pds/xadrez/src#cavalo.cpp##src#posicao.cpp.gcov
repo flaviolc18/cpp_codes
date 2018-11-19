@@ -1,0 +1,15 @@
+        -:    0:Source:src/posicao.cpp
+        -:    0:Programs:40
+        -:    1:#include "posicao.h"
+        -:    2:
+       3k:    3:Posicao::Posicao(int x, int y) : _x(x), _y(y) {}
+        -:    4:
+       1k:    5:void Posicao::set_posicao(int x, int y)
+        -:    6:{
+       1k:    7:  this->_x = x;
+       1k:    8:  this->_y = y;
+       1k:    9:}
+        -:   10:
+      11k:   11:bool Posicao::operator<(const Posicao &p) const { return (_x < p._x) || (_x == p._x && _y < p._y); }
+        -:   12:
+        -:   13:// bool Posicao::operator==(const Posicao &p) const { return _x == p._x && _y == p._y; }

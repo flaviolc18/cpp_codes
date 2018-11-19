@@ -11,18 +11,6 @@ const std::string NEGRAS = "negras";
 
 class Peca;
 
-struct comparator
-{
-  bool operator()(const Posicao &a, const Posicao &b) const
-  {
-    if (a._x == b._x && a._y == b._y)
-    {
-      return false;
-    }
-    return true;
-  }
-};
-
 class Tabuleiro
 {
 
